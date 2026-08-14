@@ -1,7 +1,15 @@
 const refinements=document.createElement('link');
 refinements.rel='stylesheet';
-refinements.href='css/refinements.css?v=3';
+refinements.href='css/refinements.css?v=4';
 document.head.appendChild(refinements);
+
+// A entrada "images" no repositório virou um arquivo, então os caminhos images/... quebravam.
+// Aplicamos as imagens oficiais embutidas para eliminar o problema de pasta/cache.
+document.querySelectorAll('.photo-frame img,.profile-image img').forEach(img=>img.setAttribute('data-luana-photo',''));
+document.querySelectorAll('.brand-image img,.footer-brand-image img').forEach(img=>img.setAttribute('data-luana-logo',''));
+const officialImages=document.createElement('script');
+officialImages.src='assets/embedded-images.js?v=1';
+document.body.appendChild(officialImages);
 
 const menuButton=document.querySelector('.menu-toggle');
 const nav=document.querySelector('.main-nav');
