@@ -1,8 +1,3 @@
-const refinements=document.createElement('link');
-refinements.rel='stylesheet';
-refinements.href='css/refinements.css?v=6';
-document.head.appendChild(refinements);
-
 const menuButton=document.querySelector('.menu-toggle');
 const nav=document.querySelector('.main-nav');
 menuButton?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));});
